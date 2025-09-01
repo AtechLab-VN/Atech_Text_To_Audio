@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Web To Audio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Web To Audio</h1>
+
+    <section class="card">
+      <h2>1) Trích xuất nội dung 1 trang</h2>
+      <div class="row">
+        <input id="url" placeholder="Dán URL chương..." />
+        <button id="btnExtract">Trích xuất</button>
+      </div>
+      <pre id="preview" class="preview"></pre>
+      <div class="row">
+        <select id="engine">
+          <option value="edge">Microsoft Edge TTS (khuyến nghị)</option>
+          <option value="gtts">Google TTS</option>
+          <option value="offline">Offline TTS</option>
+        </select>
+        <input id="lang" value="vi" placeholder="Ngôn ngữ (vi,en,...)" />
+        <input id="voice" value="vi-VN-HoaiMyNeural" placeholder="Giọng Edge (ví dụ vi-VN-HoaiMyNeural)" />
+        <input id="baseName" value="output" placeholder="Tên file" />
+        <button id="btnTTS">Chuyển sang Audio</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>2) Tự động nhiều chương</h2>
+      <div class="row">
+        <input id="startUrl" placeholder="URL chương đầu tiên" />
+        <input id="count" type="number" min="1" value="3" />
+        <select id="engine2">
+          <option value="edge">Microsoft Edge TTS</option>
+          <option value="gtts">Google TTS</option>
+          <option value="offline">Offline TTS</option>
+        </select>
+        <input id="lang2" value="vi" />
+        <input id="voice2" value="vi-VN-HoaiMyNeural" />
+        <button id="btnBatch">Chạy</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>3) File đã tạo</h2>
+      <button id="btnRefresh">Làm mới</button>
+      <ul id="files"></ul>
+    </section>
+
+    <section class="card">
+      <h2>Logs</h2>
+      <pre id="logs" class="logs"></pre>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
